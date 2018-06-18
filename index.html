@@ -1,0 +1,18 @@
+---
+layout: default
+title: Home
+---
+{% for data in site.restaurants %}{% assign restaurant=data.last %}
+	<pre><code>{{ restaurant | jsonify }}</code></pre>
+	<div class="card shadow clearfix" itemtype="http://schema.org/Restaurant" itemscope="">
+		<div class="float-left">
+			<h3 itemprop="name">{{ restaurant.name }}</h3>
+			<figure itemprop="image" itemtype="http://schema.org/ImageObject" itemscope="">
+				{% include imgur.html url=restaurant.image sizes='(min-width: 800px) 35vw, 95vw' %}
+			</figure>
+		</div>
+		<div class="float-left">
+			{% include address.html address=restaurant.address %}
+		</div>
+	</div>
+{% endfor %}
