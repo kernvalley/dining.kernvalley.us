@@ -2,8 +2,7 @@
 layout: default
 title: Home
 ---
-{% for data in site.restaurants %}{% assign restaurant=data.last %}
-	<pre><code>{{ restaurant | jsonify }}</code></pre>
+{% for restaurant in site.restaurants %}
 	<div class="card shadow clearfix" itemtype="http://schema.org/Restaurant" itemscope="">
 		<div class="float-left">
 			<h3 itemprop="name">{{ restaurant.name }}</h3>
@@ -13,6 +12,8 @@ title: Home
 		</div>
 		<div class="float-left">
 			{% include address.html address=restaurant.address %}
+			<hr />
+			{% include telephone.html telephone=restaurant.telephone %}
 		</div>
 	</div>
 {% endfor %}
