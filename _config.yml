@@ -37,6 +37,7 @@ repository:
   title: dining.kernvalley.us
   url: 'https://github.com/kernvalley/dining.kernvalley.us'
 twitter: kern_valley
+facebook-id: 2123017744629045
 feed:
   url: /feed.rss
   type: application/rss+xml
